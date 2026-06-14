@@ -9,3 +9,7 @@ lint:
 .PHONY: format
 format:
 	gofmt -w .
+
+.PHONY: publish
+publish:
+	sh publish.sh
