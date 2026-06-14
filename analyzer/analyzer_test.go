@@ -46,3 +46,7 @@ func TestLoggingLevel(t *testing.T) {
 func TestNewlineAfterDefer(t *testing.T) {
 	analysistest.Run(t, analysistest.TestData(), analyzer.NewlineAfterDefer, "newlineafterdefer")
 }
+
+func TestNewlineBeforeReturn(t *testing.T) {
+	analysistest.Run(t, analysistest.TestData(), analyzer.NewlineBeforeReturn, "newlinebeforereturn")
+}
