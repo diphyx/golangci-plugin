@@ -34,3 +34,7 @@ func TestExportedDoc(t *testing.T) {
 func TestFunctionalOptions(t *testing.T) {
 	analysistest.Run(t, analysistest.TestData(), analyzer.FunctionalOptions, "functionaloptions")
 }
+
+func TestImportGroups(t *testing.T) {
+	analysistest.Run(t, analysistest.TestData(), analyzer.ImportGroups, "importgroups")
+}

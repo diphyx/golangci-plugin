@@ -13,5 +13,6 @@ func All() []*analysis.Analyzer {
 		ErrorNaming,
 		ExportedDoc,
 		FunctionalOptions,
+		ImportGroups,
 	}
 }
