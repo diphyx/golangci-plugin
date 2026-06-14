@@ -1,0 +1,18 @@
+# Lints this repository itself (the plugin source), using upstream linters.
+version: "2"
+
+run:
+  timeout: 5m
+
+linters:
+  default: none
+  enable:
+    - errcheck
+    - govet
+    - ineffassign
+    - staticcheck
+    - unused
+  exclusions:
+    # Fixture files intentionally violate style to exercise the analyzers.
+    paths:
+      - analyzer/testdata
