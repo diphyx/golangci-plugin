@@ -17,5 +17,6 @@ func All() []*analysis.Analyzer {
 		LoggingLevel,
 		NewlineAfterDefer,
 		NewlineBeforeReturn,
+		NoAbbreviation,
 	}
 }

@@ -50,3 +50,7 @@ func TestNewlineAfterDefer(t *testing.T) {
 func TestNewlineBeforeReturn(t *testing.T) {
 	analysistest.Run(t, analysistest.TestData(), analyzer.NewlineBeforeReturn, "newlinebeforereturn")
 }
+
+func TestNoAbbreviation(t *testing.T) {
+	analysistest.Run(t, analysistest.TestData(), analyzer.NoAbbreviation, "noabbreviation")
+}
