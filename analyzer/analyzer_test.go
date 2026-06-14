@@ -58,3 +58,7 @@ func TestNoAbbreviation(t *testing.T) {
 func TestReceiverNaming(t *testing.T) {
 	analysistest.Run(t, analysistest.TestData(), analyzer.ReceiverNaming, "receivernaming")
 }
+
+func TestStructNewline(t *testing.T) {
+	analysistest.Run(t, analysistest.TestData(), analyzer.StructNewline, "structnewline")
+}

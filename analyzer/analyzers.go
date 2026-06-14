@@ -19,5 +19,6 @@ func All() []*analysis.Analyzer {
 		NewlineBeforeReturn,
 		NoAbbreviation,
 		ReceiverNaming,
+		StructNewline,
 	}
 }
