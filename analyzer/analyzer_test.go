@@ -42,3 +42,7 @@ func TestImportGroups(t *testing.T) {
 func TestLoggingLevel(t *testing.T) {
 	analysistest.Run(t, analysistest.TestData(), analyzer.LoggingLevel, "logginglevel")
 }
+
+func TestNewlineAfterDefer(t *testing.T) {
+	analysistest.Run(t, analysistest.TestData(), analyzer.NewlineAfterDefer, "newlineafterdefer")
+}

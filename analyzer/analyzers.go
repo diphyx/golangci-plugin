@@ -15,5 +15,6 @@ func All() []*analysis.Analyzer {
 		FunctionalOptions,
 		ImportGroups,
 		LoggingLevel,
+		NewlineAfterDefer,
 	}
 }
