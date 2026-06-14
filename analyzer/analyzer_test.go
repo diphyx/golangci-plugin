@@ -10,3 +10,7 @@ import (
 func TestBoolNaming(t *testing.T) {
 	analysistest.Run(t, analysistest.TestData(), analyzer.BoolNaming, "boolnaming")
 }
+
+func TestConstNaming(t *testing.T) {
+	analysistest.Run(t, analysistest.TestData(), analyzer.ConstNaming, "constnaming")
+}
