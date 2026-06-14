@@ -1,0 +1,12 @@
+# Build a custom golangci-lint binary that includes the diphyx plugin.
+# Run: golangci-lint custom
+# Produces ./custom-gcl, which understands the `diphyx` linter.
+version: v2.10.1
+name: custom-gcl
+destination: .
+plugins:
+  - module: github.com/diphyx/golangci-plugin
+    # During local development, point at the working tree instead of a tag:
+    path: .
+    # For a released version, drop `path` and use:
+    # version: v0.1.0
