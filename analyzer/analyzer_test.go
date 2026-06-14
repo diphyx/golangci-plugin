@@ -30,3 +30,7 @@ func TestErrorNaming(t *testing.T) {
 func TestExportedDoc(t *testing.T) {
 	analysistest.Run(t, analysistest.TestData(), analyzer.ExportedDoc, "exporteddoc")
 }
+
+func TestFunctionalOptions(t *testing.T) {
+	analysistest.Run(t, analysistest.TestData(), analyzer.FunctionalOptions, "functionaloptions")
+}

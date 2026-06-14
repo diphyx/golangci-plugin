@@ -12,5 +12,6 @@ func All() []*analysis.Analyzer {
 		ErrorCreation,
 		ErrorNaming,
 		ExportedDoc,
+		FunctionalOptions,
 	}
 }
