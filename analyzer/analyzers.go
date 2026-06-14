@@ -11,5 +11,6 @@ func All() []*analysis.Analyzer {
 		ConstructorNaming,
 		ErrorCreation,
 		ErrorNaming,
+		ExportedDoc,
 	}
 }

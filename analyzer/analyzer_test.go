@@ -26,3 +26,7 @@ func TestErrorCreation(t *testing.T) {
 func TestErrorNaming(t *testing.T) {
 	analysistest.Run(t, analysistest.TestData(), analyzer.ErrorNaming, "errornaming")
 }
+
+func TestExportedDoc(t *testing.T) {
+	analysistest.Run(t, analysistest.TestData(), analyzer.ExportedDoc, "exporteddoc")
+}
