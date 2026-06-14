@@ -54,3 +54,7 @@ func TestNewlineBeforeReturn(t *testing.T) {
 func TestNoAbbreviation(t *testing.T) {
 	analysistest.Run(t, analysistest.TestData(), analyzer.NoAbbreviation, "noabbreviation")
 }
+
+func TestReceiverNaming(t *testing.T) {
+	analysistest.Run(t, analysistest.TestData(), analyzer.ReceiverNaming, "receivernaming")
+}
