@@ -8,5 +8,6 @@ func All() []*analysis.Analyzer {
 	return []*analysis.Analyzer{
 		BoolNaming,
 		ConstNaming,
+		ConstructorNaming,
 	}
 }

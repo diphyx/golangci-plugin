@@ -14,3 +14,7 @@ func TestBoolNaming(t *testing.T) {
 func TestConstNaming(t *testing.T) {
 	analysistest.Run(t, analysistest.TestData(), analyzer.ConstNaming, "constnaming")
 }
+
+func TestConstructorNaming(t *testing.T) {
+	analysistest.Run(t, analysistest.TestData(), analyzer.ConstructorNaming, "constructornaming")
+}
