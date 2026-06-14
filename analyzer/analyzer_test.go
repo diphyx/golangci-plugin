@@ -22,3 +22,7 @@ func TestConstructorNaming(t *testing.T) {
 func TestErrorCreation(t *testing.T) {
 	analysistest.Run(t, analysistest.TestData(), analyzer.ErrorCreation, "errorcreation")
 }
+
+func TestErrorNaming(t *testing.T) {
+	analysistest.Run(t, analysistest.TestData(), analyzer.ErrorNaming, "errornaming")
+}

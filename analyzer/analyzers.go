@@ -10,5 +10,6 @@ func All() []*analysis.Analyzer {
 		ConstNaming,
 		ConstructorNaming,
 		ErrorCreation,
+		ErrorNaming,
 	}
 }
