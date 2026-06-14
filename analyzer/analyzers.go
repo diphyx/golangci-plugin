@@ -14,5 +14,6 @@ func All() []*analysis.Analyzer {
 		ExportedDoc,
 		FunctionalOptions,
 		ImportGroups,
+		LoggingLevel,
 	}
 }

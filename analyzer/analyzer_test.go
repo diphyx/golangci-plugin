@@ -38,3 +38,7 @@ func TestFunctionalOptions(t *testing.T) {
 func TestImportGroups(t *testing.T) {
 	analysistest.Run(t, analysistest.TestData(), analyzer.ImportGroups, "importgroups")
 }
+
+func TestLoggingLevel(t *testing.T) {
+	analysistest.Run(t, analysistest.TestData(), analyzer.LoggingLevel, "logginglevel")
+}
