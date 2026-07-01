@@ -1,0 +1,14 @@
+# Runs ONLY the diphyx plugin over the fixture packages, so the harness can
+# tell exactly which diphyx rules fire. Requires the custom-gcl binary built
+# from the repo-root .custom-gcl.yml (see example/verify.sh).
+version: "2"
+
+linters:
+  default: none
+  enable:
+    - diphyx
+  settings:
+    custom:
+      diphyx:
+        type: module
+        description: diphyx code style rules
