@@ -20,5 +20,6 @@ func All() []*analysis.Analyzer {
 		NoAbbreviation,
 		ReceiverNaming,
 		StructNewline,
+		SwitchCaseBraces,
 	}
 }

@@ -23,6 +23,7 @@ The plugin registers under the name **`diphyx`**.
 | `noabbreviation`      | Forbids `ctx`, `cmd`, `cfg`, `msg`, `req`, `resp`, `res` — use the full word.                                                   |
 | `receivernaming`      | Method receivers must be the camelCase of the full type name.                                                                   |
 | `structnewline`       | A blank line is required after embedded fields and before the first private field.                                              |
+| `switchcasebraces`    | Each `switch`/type-switch case body must be wrapped in a block `{ }` (empty and `fallthrough` cases are exempt).                |
 
 ## Use as a golangci-lint plugin
 

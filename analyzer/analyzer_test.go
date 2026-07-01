@@ -62,3 +62,7 @@ func TestReceiverNaming(t *testing.T) {
 func TestStructNewline(t *testing.T) {
 	analysistest.Run(t, analysistest.TestData(), analyzer.StructNewline, "structnewline")
 }
+
+func TestSwitchCaseBraces(t *testing.T) {
+	analysistest.Run(t, analysistest.TestData(), analyzer.SwitchCaseBraces, "switchcasebraces")
+}
