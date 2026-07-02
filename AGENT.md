@@ -45,6 +45,7 @@ path/file.go:5:2: <rule>: <message> (diphyx)
 | `errornaming`         | error var named `err`/`e`, or ending in `…Err`                         | Name it `{functionName}Error`                            |
 | `exporteddoc`         | exported func/method without a doc comment                             | Add a `// Name …` doc comment                            |
 | `functionaloptions`   | exported func returning `func(...)` not named `With…`                  | Rename to `With{Option}`                                 |
+| `ifinitstatement`     | an `if` carries an init statement (`if x := …; cond {`)                | Declare the variable on its own line before the `if`     |
 | `importgroups`        | a stdlib import after a third-party one, or a blank import not last    | stdlib group first, third-party next, blank imports last |
 | `logginglevel`        | `log.Info/Warn/Notice/Trace/Fatal/Panic(...)`                          | Use only `log.Debug` or `log.Error`                      |
 | `newlineafterdefer`   | a statement immediately after a `defer` (no blank line)                | Insert a blank line after the `defer`                    |
@@ -228,6 +229,31 @@ type Config struct {
 ---
 
 ## 7. Control flow
+
+**No init statement in an `if`.** `ifinitstatement`
+An `if` (and `else if`) must not combine a declaration with its condition — this includes the
+common error-check form. Move the statement to its own line above the `if` so each line does
+one thing.
+
+```go
+_, isPresent := byName[step]
+if !isPresent {
+	doSomething()
+}
+
+callError := doWork()
+if callError != nil {
+	return callError
+}
+
+// not:
+if _, isPresent := byName[step]; !isPresent {   // ifinitstatement: declare it before the if
+	doSomething()
+}
+if callError := doWork(); callError != nil {    // ifinitstatement: error checks too
+	return callError
+}
+```
 
 **Wrap each switch case body in braces.** `switchcasebraces`
 Every `switch` and type-switch case (and `default`) body must be a single block `{ }`.

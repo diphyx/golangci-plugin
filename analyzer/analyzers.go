@@ -13,6 +13,7 @@ func All() []*analysis.Analyzer {
 		ErrorNaming,
 		ExportedDoc,
 		FunctionalOptions,
+		IfInitStatement,
 		ImportGroups,
 		LoggingLevel,
 		NewlineAfterDefer,

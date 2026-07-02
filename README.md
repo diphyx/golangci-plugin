@@ -16,6 +16,7 @@ The plugin registers under the name **`diphyx`**.
 | `errornaming`         | Error variables must follow the `{functionName}Error` pattern; bare `err`/`e` and the `…Err` suffix are rejected.               |
 | `exporteddoc`         | Exported functions and methods must have a documentation comment.                                                               |
 | `functionaloptions`   | Exported functions returning `func(*T)` must be named `With{Option}`.                                                           |
+| `ifinitstatement`     | `if` statements must not use an init statement; declare the variable before the `if`.                                           |
 | `importgroups`        | Standard library imports must precede third-party imports; blank imports go last.                                               |
 | `logginglevel`        | Only `Debug` and `Error` log levels are allowed (no `Info`, `Warn`, `Notice`, `Trace`, `Fatal`, `Panic`).                       |
 | `newlineafterdefer`   | A blank line is required after a `defer` statement.                                                                             |
