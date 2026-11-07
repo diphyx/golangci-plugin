@@ -274,17 +274,17 @@ case 1:
 Because `diphyx` is a **module plugin**, you don't install it as a normal linter — you build a
 custom `golangci-lint` binary that embeds it.
 
-**1. Prerequisites:** Go 1.25+ and golangci-lint v2 (`golangci-lint --version`).
+**1. Prerequisites:** Go 1.26+ and golangci-lint v2 (`golangci-lint --version`).
 
 **2. Declare the plugin build** — create `.custom-gcl.yml` at the project root:
 
 ```yaml
-version: v2.10.1 # match your installed golangci-lint
+version: v2.15.0 # match your installed golangci-lint
 name: custom-gcl
 destination: .
 plugins:
     - module: github.com/diphyx/golangci-plugin
-      version: v0.1.0 # a released tag; or use `path: .` to build from a local checkout
+      version: v1.3.0 # a released tag; or use `path: .` to build from a local checkout
 ```
 
 **3. Build the custom binary:**
