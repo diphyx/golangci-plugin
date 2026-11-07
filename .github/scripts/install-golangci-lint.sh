@@ -4,7 +4,7 @@
 # custom` builds a compatible binary. Override by passing a tag as $1.
 set -eu
 
-version="${1:-v2.10.1}"
+version="${1:-v2.15.0}"
 bindir="$(go env GOPATH)/bin"
 
 curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh \

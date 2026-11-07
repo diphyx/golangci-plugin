@@ -32,10 +32,10 @@ Build a custom `golangci-lint` binary that bundles this plugin. From a project
 that wants to use it, add `.custom-gcl.yml`:
 
 ```yaml
-version: v2.10.1
+version: v2.15.0
 plugins:
     - module: github.com/diphyx/golangci-plugin
-      version: v0.1.0
+      version: v1.3.0
 ```
 
 Build the custom binary and enable the linter in `.golangci.yml`:

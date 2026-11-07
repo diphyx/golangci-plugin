@@ -3,8 +3,8 @@ set -euo pipefail
 
 # Pick the next version, optionally push, and create a GitHub release whose
 # tag publishes the module to the Go proxy.
-# Go modules are versioned by git tags (vX.Y.Z); there is no version file to
-# edit — pushing the tag is the publish.
+# Go modules are versioned by git tags (vX.Y.Z); the version references in the
+# docs/config are bumped and committed, and pushing the tag is the publish.
 # Usage: ./publish.sh
 
 # ─── Validate ───
@@ -47,6 +47,26 @@ VERSION="v${MAJOR}.${MINOR}.${PATCH}"
 if [[ "$VERSION" != "$CURRENT" ]]; then
     echo ""
     echo "==> ${CURRENT} → ${VERSION}"
+
+    # ─── Bump plugin version references in docs/config, then stage + commit ───
+    # Only indented `version:` lines (the plugin entry) are touched; the
+    # top-level golangci-lint `version:` stays as-is.
+    VERSION_FILES=(README.md AGENT.md .custom-gcl.yml)
+
+    for file in "${VERSION_FILES[@]}"; do
+        [[ -f "$file" ]] || continue
+        sed -E "s/^([[:space:]]+(# )?version: )v[0-9]+\.[0-9]+\.[0-9]+/\1${VERSION}/" "$file" > "$file.tmp"
+        mv "$file.tmp" "$file"
+    done
+
+    git add -- "${VERSION_FILES[@]}"
+
+    if git diff --cached --quiet -- "${VERSION_FILES[@]}"; then
+        echo "==> Version references already at ${VERSION}"
+    else
+        git commit -m "chore: release ${VERSION}" -- "${VERSION_FILES[@]}"
+        echo "==> Committed version bump ${VERSION}"
+    fi
 fi
 
 # ─── Action ───
